@@ -11,4 +11,4 @@ Repositorio para curso de `R para Ciencias de la Salud` `INM-211`, Postrgrado de
 - **Inicio:** 4 de Junio de 2025
 
 ### Cronograma
-La informacion detallada del contenido programatico se puede descargar directamente desde este [link]
+La informacion detallada del contenido programatico se puede descargar directamente desde este [link](Programa/Cronograma 2025 R Cs de la vida.pdf)
