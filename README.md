@@ -1,4 +1,4 @@
-# R para Ciencias de la Salud (2025)
+# R para Ciencias de la Vida (2025)
 Repositorio para curso de `R para Ciencias de la Salud` `INM-211`, Postrgrado de Inmunologia, IVIC 2025
 
 ### Información adicional
