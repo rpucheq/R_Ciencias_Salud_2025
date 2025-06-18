@@ -15,5 +15,8 @@ Repositorio para curso de `R para Ciencias de la Salud` `INM-211`, Postrgrado de
 ### Cronograma
 La informacion detallada del contenido programatico se puede descargar directamente desde este [link](Programa/Cronograma_2025.pdf)
 
+### Guia
+En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.pdf) breve de estudio con los conceptos mas relavantes dados en clase.
+
 ### Tareas
 - Asignacion 1
