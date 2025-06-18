@@ -6,6 +6,7 @@ Repositorio para curso de `R para Ciencias de la Salud` `INM-211`, Postrgrado de
 - **Coordinador de la Materia:**
   - Dr. Fernando Hernández
 - **Profesores:**
+  - Dr. Fernando Hernández
   - Lcdo. Rafael Puche
   
 - **Horario:** Miercoles 9:00 - 11:00 am
