@@ -5,7 +5,7 @@ Repositorio para curso de `R para Ciencias de la Salud` `INM-211`, Postrgrado de
 - **Créditos:** 1 UC
 - **Coordinador de la Materia:** Dr. Fernando Hernández
 - **Profesores:**
-  - Lic. Rafael Puche
+  - Lcdo. Rafael Puche
   
 - **Horario:** Miercoles 9:00 - 11:00 am
 - **Inicio:** 4 de Junio de 2025
