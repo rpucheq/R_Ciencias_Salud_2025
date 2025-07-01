@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Recordemos que un vector tiene una sola dimension. A continuacion, creamos un vector **a**
 
 
-```{r cars}
+```{r}
 a <- 1:6 # Vector de 6 elementos
 length(a) # Numero de elementos que componen a
 
