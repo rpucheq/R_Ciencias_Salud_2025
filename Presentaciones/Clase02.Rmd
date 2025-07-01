@@ -1,0 +1,203 @@
+---
+title: "Clase 02"
+author: "Fernando Hernandez / Rafael Puche"
+date: "2025-06-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Matrices
+
+Recordemos que un vector tiene una sola dimension. A continuacion, creamos un vector **a**
+
+
+```{r cars}
+a <- 1:6 # Vector de 6 elementos
+length(a) # Numero de elementos que componen a
+
+# Si empleamos la funcion dim() nos va dar como salida *NULL*
+dim(a) #NULL
+dim(a) <- c(2, 3) # Si le asignamos a "a" los valores c(2, 3) crearemos una matriz de 2 x 3 al asignarle dos dimensiones
+a
+```
+
+Si ahora al vector **"a"** de 6 elementos le asignamos los valores `c(4, 4)`, para crear una matriz de 16 elementos, nos arroja un error.
+
+```{r, error=TRUE}
+dim(a) <- c(4, 4)
+```
+
+Esto lo solucionamos al crear un vector **"b"** de 16 elementos y le asignamos los valores arriba descritos.
+
+```{r}
+b <- 1:16
+dim(b) <- c(4,4)
+```
+
+Tambien podemos crear una matriz utilizando la funcion `matrix()` que forma parte del paquete (libreria) `base`
+
+```{r}
+matriz <- matrix(data = 1:10, nrow = 5, ncol = 2) # Creamos una matriz de 10 elementos. Organizados en 5 filas y dos columnas
+matriz
+```
+
+Al crear la matriz se pueden utilizar los mismos operadores que en el caso de vectores para ubicar elementos
+
+```{r}
+matriz == 2 # Nos mostrara la matriz con valores logicos indicando la posicion (2, 1) dentro de la matriz como TRUE
+```
+
+Si se quiere ubicar el elemento se puede usar su posicion dentro de la matriz
+```{r}
+matriz[1, 2] #Muestra el elemento de la primera fila y la segunda columna
+matriz[2, 1] #Muestra el elemento de la segunda fila y la primera columna
+matriz[5, 2] #Muestra el elemento de la quinta fila y la segunda columna
+matriz[2, ] #Muestra TODOS los elementos que forman parte de la segunda fila
+matriz[, 1] # Muestra TODOS los elementos que forman parte de la primera columna
+```
+
+Tambien podemos crear una matriz vacia que nos puede servir para ir almacenando de manera ordenada elementos dentro de ella
+
+```{r}
+matriz_vacia <- matrix(nrow = 5, ncol = 5)
+matriz_vacia
+```
+
+Por defecto, la funcion `matrix` emplea el argumento `byrow` **FALSE** para llenar las posiciones de la matriz por columna. Nosotros podemos cambiar el valor del argumento a **TRUE** para forzar a la funcion a llenar las posiciones tomando en consideracion las filas.
+
+```{r}
+a <- matrix(data = 1:6, nrow = 3, ncol = 2)
+b <- matrix(data = 1:6, nrow = 3, ncol = 2) # Por columnas
+b
+b <- matrix(data = 1:6, nrow = 3, ncol = 2, byrow = TRUE) # Por filas
+b
+```
+
+Sobre las matrices creadas se pueden realizar operaciones aritmeticas
+```{r}
+# Suma
+a + b
+
+# Resta 
+a - b
+
+# Multiplicacion
+a * b
+
+# Division
+round(a / b, 1) ### Investigar que hace la funcion round() en esta operacion ###
+
+# Potenciacion
+a ** b
+```
+
+Podemos crear un par de matrices con mayor numero de elementos
+```{r}
+a <- matrix(data = 1:100, nrow = 10, ncol = 10)
+b <- matrix(data = 100:1, nrow = 10, ncol = 10, byrow = TRUE)
+a
+b
+
+# Subconjuntos dentro de la matriz
+b[,2:4]
+b[2:4,2:4]
+b[,c(2, 4)] #Seleccionamos TODOS los elementos de la segunda y cuarta columna
+b[c(2, 4),c(2, 4)] #Selecciona los elementos 2 y 4 de las filas y luego los elementos 2 y 4 en las columnas
+b[c(2, 4)] #Ubicamos el segundo y cuarto elemento de las FILAS
+```
+
+A los elementos que componen las filas y las columnas de una matriz se le pueden asignar nombres. Tomemos como ejemplo la matriz **b** y crearemos dos vectores que almacenaran los nombres de las columnas y las filas. Usaremos dos de las constantes incorporadas en el lenguaje: `month.abb` y `LETTERS`.
+```{r}
+columna <- month.abb[1:10]
+fila <- LETTERS[1:10]
+# Recordemos que ambas matrices son de 10 x 10
+
+colnames(b) <- columna
+rownames(b) <- fila
+b
+```
+
+A una matriz se le pueden agregar filas y columnas adicionales luego de su creacion. A continuacion un ejemplo
+```{r}
+b[c(b, 1:10)] #Al emplear la funcion c() nos muestra una secuencia de numeros que tiene al final los numeros del 1 al 10.
+
+b <- cbind(b, 1:10) # Empleando la funcion cbind() podemos generar la columna adicional
+b
+colnames(b)[11] <- month.abb[11] # Esta linea del codigo nos va a permitir agregar en la columna 11 el nombre que se encuentra en la posicion 11 de la constante month.abb
+b
+```
+
+A la matriz **b** le podemos agregar tambien una fila adicional con 11 elementos usando la funcion `rbind()`
+```{r}
+b <- rbind(b, 1:11)
+rownames(b)[11] <- LETTERS[11]
+b
+```
+
+Para remover elementos de una matriz se puede emplear el operador de la resta **-**. Ejemplo: Eliminemos la fila y la columna recien creada de la matriz **b**
+```{r}
+b <- b[-11,]
+b
+b <- b[,-11]
+b
+```
+
+## Listas
+
+Las listas son un tipo de dato dentro del lenguaje de programacion que nos permiten almacenar datos de distinta naturaleza dentro de ellas. Por ejemplo: podemos crear listas que contengan elementos logicos, numericos, caracteres, marcos de datos, matrices y vectores.
+
+```{r}
+lista <- list(c("Andrea", "Michelle", "Jose"), c(1, 2, 3)) #Lista con caracteres y numeros
+lista
+lista <- list(c("Andrea", "Michelle", "Jose"), c(1, 2, 3), matrix(data = 1:6, ncol = 3, nrow = 2)) #Lista con caracteres, numeros y una matriz de 2 x 3
+lista
+lista[[1]] #Este operador [[]] nos permite extraer el elemento que se encuentra en la primera posicion de la lista
+names(lista) <- c("caracter", "numero", "matriz") #La funcion names() nos permite nombrar los elementos que componen la lista
+lista
+# Ahora podemos emplear el operador $ para ubicar los elementos dentro de la lista
+lista$numero
+```
+
+Para remover elementos de la lista podemos usar el operador **-** e indicar la posicion de los elementos que buscamos remover
+
+```{r, error=TRUE}
+lista[-2]
+lista$caracter[-3] # Removemos el tercer elemento (Antonio) dentro de lista$caracter
+lista$caracter <- lista$caracter[-3] # Removemos y asignamos nuevamente sobre el objeto caracter dentro de la lista
+lista
+```
+
+Las listas son importantes porque muchas veces dentro del lenguaje de programacion son usadas por otras funciones para asignar argumentos como: nombres de filas o columnas, conjuntos ordenados de nombres o conjuntos de informacion que buscamos unir
+```{r, error=TRUE}
+matriz <- matrix(1:6, nrow = 2, ncol = 3, dimnames = c(fila[1:2], columna[1:3]))
+matriz <- matrix(1:6, nrow = 2, ncol = 3, dimnames = list(fila[1:2], columna[1:3]))
+matriz
+```
+
+Otra particularidad interesante de las listas es que podemos crear listas que contengan listas dentro. Por ejemplo:
+```{r}
+lista_anidada <- list(list(0,2), list(3,4), list(5,6))
+lista_anidada
+```
+
+R incorpora un conjunto de funciones que buscan ahorrar recursos y se aprovechan de la vectorizacion propia del lenguaje para realizar complejas operaciones de una manera rapida. Investigar en la ayuda de R las funciones: `apply`, `lapply`, `sapply`, `tapply`.
+
+```{r}
+lapply(lista_anidada, "[[", 1) #Esta linea del codigo nos permite ubicar dentro de la lista anidada cada primer elemento 
+```
+
+Estas funciones tambien permitiran realizar complejas operaciones matematicas sin la necesidad de utilizar expresiones de control (que veremos mas adelante). Usemos como ejemplo el conjunto de datos **iris** que forma parte de la libreria `datasets` que viene con el lenguaje
+
+```{r}
+data("iris") #Cargamos los datos
+dim(iris) # Un conjunto de datos compuesto de 5 columnas y 150 observaciones (filas)
+lapply(X = iris[1:4], FUN = mean) # Esta funcion nos permite calcular la media para las 4 columnas con valores numericos 
+tapply(X = iris$Sepal.Length, INDEX = iris$Species, FUN = mean) #tapply nos permite calcular la media de la longitud del sepalo en funcion de la especies que forman parte del conjunto de datos (setosa, versicolor y virginica)
+apply(X = iris[1:4], MARGIN = 2, FUN = mean) #Esta funcion nos permite calcular la media para las cuatro columnas pero a diferencia de lapply le estamos indicando que realice la operacion sobre las columnas al usar el argumento MARGIN=2. NOTA: Si usamos MARGIN=1 calculara la media sobre todas las filas del conjunto de datos (150 filas)
+```
+
+
+
