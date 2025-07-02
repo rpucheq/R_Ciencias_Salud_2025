@@ -18,5 +18,10 @@ La informacion detallada del contenido programatico se puede descargar directame
 ### Guia
 En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.pdf) breve de estudio con los conceptos mas relavantes dados en clase.
 
+### Presentaciones
+- [Clase 1](Presentaciones/Clase1
+
 ### Tareas
 - Asignacion 1
+- Asignacion 2
+- Asignacion 3
