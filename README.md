@@ -21,7 +21,10 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 ### Presentaciones
 - [Clase 1](Presentaciones/Clase01/Clase_01.pptx)
 - [Clase 2](Presentaciones/Clase02/Clase_02.pptx)
-
+- [Clase 3](Presentaciones/Clase03/Clase_02.pptx)
+- [Clase 4](Presentaciones/Clase04/Clase_02.pptx)
+- [Clase 5](Presentaciones/Clase05/Clase_02.pptx)
+  
 ### Tareas
 - Asignacion 1
 - Asignacion 2
