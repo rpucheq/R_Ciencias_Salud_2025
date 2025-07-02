@@ -26,6 +26,6 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 - [Clase 5](Presentaciones/Clase05/Clase_5_Listas_DF_Jun_2025.pdf)
   
 ### Tareas
-- Asignacion 1
+- [Asignacion 1](Tareas/Tarea1_2025.pdf)
 - Asignacion 2
 - Asignacion 3
