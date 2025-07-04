@@ -28,4 +28,4 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 ### Tareas
 - [Asignacion 1](Tareas/Tarea1_2025.pdf)
 - [Asignacion 2](Tareas/Tarea%202.pdf)
-- Asignacion 3
+- [Asignacion 3](Tareas/Tarea_Listas_Dataframes_R_2025.pdf)
