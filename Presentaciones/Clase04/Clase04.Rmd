@@ -1,0 +1,216 @@
+---
+title: 'Programacion en R: Expresiones de control'
+author: "Fernando Hernandez / Rafael Puche"
+date: "2025-07-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Expresiones de control
+
+---
+
+Como su nombre lo indica, las estructuras de control nos permiten controlar la manera en que se ejecuta nuestro código.
+
+Las estructuras de control establecen condicionales en nuestros código. Por ejemplo, qué condiciones deben cumplirse para realizar una operación o qué debe ocurrir para ejecutar una función.
+
+Esto es de gran utilidad para determinar la lógica y el orden en que ocurren las operaciones, en especial al definir funciones.
+
+Las **estructuras de control** más usadas en R son las siguientes:
+
+
+Estructura de control | Descripcion
+:-------------:|:-------------:
+if, else | Si, de otro modo (entonces)
+for | Para cada uno en
+while | Mientras
+break | Interrupcion
+next | Siguiente
+ifelse | Si, de otro modo (vectorizado)
+
+Recordemos los operadores logicos en R:
+
+Operador | Nombre | Ejemplo
+:--------:|:---------:|:--------:
+== | Igual a | x == y
+!= | No es igual a | x != y
+> | Mayor que | x > y
+< | Menor que | x < y
+>= | Mayor que o igual a | x >= y
+<= | Menor que o igual a | x <= y
+
+### Expresion 1: if
+
+---
+
+El modelo para un if es:
+```{r, error=TRUE, eval=FALSE}
+if(Condición) { 
+  operaciones_si_la_condición_es_TRUE
+}
+```
+
+```{r}
+a <- 33
+b <- 100
+if(b > a){
+print("b es mayor que a")
+}
+
+a <- 200
+b <- 100
+if(b < a){
+print("b es menor que a")
+}
+
+```
+
+### if...else
+
+---
+
+```{r}
+if (b < a){
+print("b es menor que a")
+}else{
+print ("a es mayor que b")
+}
+
+if (b > a){
+print("b es menor que a")
+}else{
+print ("a es mayor que b")
+}
+
+```
+
+### else if
+
+---
+
+```{r}
+a <- 33
+b <- 33
+if (b > a) {
+print("b es mayor que a")
+} else if (a == b) {
+print ("a y b son iguales")
+}
+
+a <- 33
+b <- 330
+if (b > a) {
+print("b es mayor que aa")
+} else if (a == b) {
+print ("a y b son iguales")
+}
+```
+
+### while
+
+---
+
+El modelo de while es:
+
+```{r,error=TRUE, eval=FALSE}
+while(condicion) {
+  operaciones
+}
+```
+
+```{r}
+i <- 1 # Le asignamos a i el valor de 1
+
+while(i < 6) {
+print(i)
+  break
+}
+
+# Si el codigo anterior lo ejecutamos sin break se creara un loop infinito ya que la condicion indica que mientras i sea menor a 1 imprimira 1. El agregar break detiene este comportamiento
+
+i <- 0
+
+while(i < 6) {
+print(i)
+i <- i + 1
+}
+
+i <- 0
+
+while(i <= 6) {
+print(i)
+i <- i + 1
+}
+
+numero <- 1
+suma <- 0
+while (numero <= 5) {
+suma = suma + numero
+numero = numero + 1
+print(suma)
+}
+```
+
+### for
+
+---
+
+El modelo de un for es:
+```{r,error=TRUE, eval=FALSE}
+for(elemento in objeto) {
+  operacion_con_elemento
+}
+```
+
+```{r}
+for(x in 1:10) {
+print(x)
+}
+
+for(x in 1:10) {
+  print(x + 3)
+}
+```
+
+### ifelse
+
+---
+```{r}
+a <- 1:10
+ifelse(a %% 2 == 0,"par","impar")
+
+mi_variable <- c(-2, 0, 5, -3, 2, 6)
+
+ifelse(mi_variable > 0,"positivo","negativo") #Detecta el 0 como negativo
+
+a <- seq(-3, 3, 1) 
+ifelse(a > 0, "positivo", ifelse(a == 0, "neutro", "negativo")) # Detecta al 0 como valor neutro
+```
+
+### Operaciones anidadas
+
+---
+```{r}
+for (i in 1:10) {
+if(i %% 2 == 0){
+print(paste(i, "es par"))
+} else {
+print(paste(i, "es impar"))
+}
+}
+
+x <- 19
+if(x > 10){
+print("x es mayor a 10")
+if(x > 20){
+print("x es mayor a 20")
+} else {
+print("x es menor a 20")
+}
+} else {
+print("x es menor a 10")
+}
+```
