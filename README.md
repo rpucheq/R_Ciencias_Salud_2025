@@ -29,3 +29,4 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 - [Asignacion 1](Tareas/Tarea_1_2025.pdf)
 - [Asignacion 2](Tareas/Tarea_2_2025.pdf)
 - [Asignacion 3](Tareas/Tarea_3_2025.pdf)
+- [Asignacion 4 y 5](Tareas/Tarea_4_5_2025.pdf)
