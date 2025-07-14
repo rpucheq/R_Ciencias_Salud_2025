@@ -26,6 +26,6 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 - [Clase 5](Presentaciones/Clase05/Programación_en_R_funciones.pptx)
   
 ### Tareas
-- [Asignacion 1](Tareas/Tarea1_2025.pdf)
-- [Asignacion 2](Tareas/Tarea%202.pdf)
-- [Asignacion 3](Tareas/Tarea_Listas_Dataframes_R_2025.pdf)
+- [Asignacion 1](Tareas/Tarea_1_2025.pdf)
+- [Asignacion 2](Tareas/Tarea_2_2025.pdf)
+- [Asignacion 3](Tareas/Tarea_3_2025.pdf)
