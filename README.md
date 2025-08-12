@@ -24,7 +24,7 @@ En esta edicion elaboramos una [guia](Guía_rapida_Estudio_R_CsVida_2025_RPQ_FH.
 - [Clase 3](Presentaciones/Clase03/Clase_5_Listas_DF_Jun_2025.pdf)
 - [Clase 4](https://github.com/rpucheq/R_Ciencias_Salud_2025/blob/main/Presentaciones/Clase04/Clase04.pptx)
 - [Clase 5](Presentaciones/Clase05/Programación_en_R_funciones.pptx)
-- [Clase 6](Presentaciones/Clase02/Clase06.html)
+- [Clase 6](Presentaciones/Clase06/Graficos_R_9_tema_RStudio_IVIC_2025.html)
   
 ### Tareas
 - [Asignacion 1](Tareas/Tarea_1_2025.pdf)
